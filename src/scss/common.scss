@@ -4,11 +4,18 @@
     min-height: rem(42);
     padding: rem(8) rem(17);
     border-radius: rem(21);
-    display: inline-block;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: rem(14);
+    font-size: rem(16);
     @media (max-width:$mobileSmall){
         justify-content: center; 
     }
+}
+
+.title {
+    font-family: 'VarelaRound', sans-serif;
+    color: $darkColor;
+    font-size: rem(42);
+    line-height: 1.24;
 }

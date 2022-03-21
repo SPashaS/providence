@@ -5,6 +5,9 @@
 	left: 0;
 	width: 100%;
 	min-width: $minWidth+px;
+	@media (max-width:$tablet){
+		top: rem(20);
+	}
 	& a {
 		font-size: rem(22);
 		color: #26272d;
@@ -73,6 +76,7 @@
 	&__body {
 		@media (max-width:$tablet){
 			position: fixed;
+			z-index: 2;
 			top: 0;
 			left: -100%;
 			width: 100%;

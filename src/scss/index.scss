@@ -1,3 +1,86 @@
 //====================================================================================================
+.wrapper {
+}
+.page {
+		// .page__main-screen
+		&__main-screen {
+		}
+}
+.main-screen {
+        @include adaptiveValue("padding-top",200,70);
+        position: relative;
+        &::before {
+            content:'';
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%);
+            width: rem(1600);
+            height: 100%;
+            background: url('../img/main-screen/bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+		// .main-screen__container
+		&__container {
+		}
+        // .main-screen__content
+        &__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+		// .main-screen__title
+		&__title {
+            @include adaptiveValue("font-size",62,30);
+            text-align: center;
+            &:not(:last-child) {
+                margin-bottom: em(40,62);
+            }
+		}
+
+		// .main-screen__text
+
+		&__text {
+            max-width: rem(780);
+            text-align: center;
+            &:not(:last-child) {
+                @include adaptiveValue("margin-bottom",60,20);
+            }
+            @include adaptiveValue("font-size",20,16);
+		}
+
+		// .main-screen__button
+
+		&__button {
+            border: solid 1px rgba(38, 39, 45, 0.1);
+            background-color: transparent;
+            &::before{
+                transform: rotate(180deg);
+                font-size: rem(8);
+            }
+		}
+
+		// .main-screen__image-ibg
+		&__image {
+            @include adaptiveValue("margin-top",55,20);
+            position: relative;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            @include adaptiveValue("width",369,250);
+            @include adaptiveValue("padding-bottom",455,309);
+            
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                // box-shadow: 3.4px 9.4px 16px 0 rgba(61, 61, 62, 0.14), 15px 41.3px 66px 0 rgba(92, 95, 101, 0.15);
+            }
+		}
+}
+.title {
+}
 
 //====================================================================================================
