@@ -1,0 +1,14 @@
+// Заголовки, общие БЄМ блоки и проче...
+.button {
+    background-color: $blueColor;
+    min-height: rem(42);
+    padding: rem(8) rem(17);
+    border-radius: rem(21);
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    gap: rem(14);
+    @media (max-width:$mobileSmall){
+        justify-content: center; 
+    }
+}
