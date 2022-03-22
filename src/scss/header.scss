@@ -1,10 +1,12 @@
 //====================================================================================================
 .header {
 	position: absolute;
+	z-index: 1;
 	top: rem(44);
 	left: 0;
 	width: 100%;
 	min-width: $minWidth+px;
+	
 	@media (max-width:$tablet){
 		top: rem(20);
 	}
@@ -33,6 +35,7 @@
 		justify-content: space-between;
 		align-items: center;
 		gap: rem(10);
+		min-height: rem(42);
 	}
 
 	// .header__menu
@@ -41,6 +44,9 @@
 
 	// .header__logo
 	&__logo {
+		img {
+			vertical-align: middle;
+		}
 		@media (min-width:$tablet){
 			position: absolute;
 			top: 50%;
@@ -48,7 +54,6 @@
 			transform: translate(-50%, -50%);
 			display: block; 
 		}
-		
 	}
 
 	// .header__get

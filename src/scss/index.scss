@@ -2,26 +2,30 @@
 .wrapper {
 }
 .page {
-		// .page__main-screen
-		&__main-screen {
-		}
+	// .page__main-screen
+	&__main-screen {
+	}
+    // .page__features
+    &__features {
+    }
 }
 .main-screen {
         @include adaptiveValue("padding-top",200,70);
         position: relative;
-        &::before {
-            content:'';
-            position: absolute;
-            z-index: -1;
-            top: 0;
-            left: 50%;
-            transform: translate(-50%);
-            width: rem(1600);
-            height: 100%;
-            background: url('../img/main-screen/bg.jpg');
-            background-size: cover;
-            background-position: center;
-        }
+        background: url('../img/main-screen/bg.jpg');
+        background-size: cover;
+        background-position: center;
+        // &::before {
+        //     content:'';
+        //     position: absolute;
+        //     z-index: -1;
+        //     top: 0;
+        //     left: 50%;
+        //     transform: translate(-50%);
+        //     width: rem(1600);
+        //     height: 100%;
+            
+        // }
 		// .main-screen__container
 		&__container {
 		}
@@ -82,5 +86,71 @@
 }
 .title {
 }
+
+//====================================================================================================
+
+.features {
+    @include adaptiveValue("padding-top",120,30);
+    @include adaptiveValue("padding-bottom",170,30);
+    // .features__container
+    &__container {
+    }
+
+    // .features__body
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(rem(290), 1fr));
+        column-gap: rem(30);
+        row-gap: rem(30);
+    }
+
+    // .features__item
+    &__item {
+        
+    }
+}
+
+.item-features {
+    max-width: rem(495);
+    display: flex;
+    flex-direction: column;
+    @include adaptiveValue("gap",45,20);
+    @include adaptiveValue("padding-left",40,0,1200,920);
+    // .item-features__image
+    &__image {
+        img {
+            height: rem(47);
+        }
+    }
+
+    // .item-features__title
+    &__title {
+        @include adaptiveValue("font-size",26,22);
+        line-height: 1.31;
+        font-weight: 300;
+        color: $darkColor;
+    }
+
+    // .item-features__text
+    &__text {
+        @include adaptiveValue("font-size",18,16);
+        line-height: 1.44;
+    }
+}
+
+//====================================================================================================
+
+//====================================================================================================
+
+//====================================================================================================
+
+//====================================================================================================
+//====================================================================================================
+
+//====================================================================================================
+
+//====================================================================================================
+
+//====================================================================================================
 
 //====================================================================================================
