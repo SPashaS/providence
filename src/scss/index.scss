@@ -11,6 +11,9 @@
     // .page__iphone-feature
     &__iphone-feature {
     }
+    // .page__map
+    &__map {
+    }
 }
 .main-screen {
         @include adaptiveValue("padding-top",200,70);
@@ -138,6 +141,7 @@
 //====================================================================================================
 
 .iphone-feature {
+    padding: 0 0 rem(30) 0;
     @media (min-width:$tablet){
         @include adaptiveValue("padding-top",265,30);
         @include adaptiveValue("padding-bottom",230,30);
@@ -151,7 +155,6 @@
     // .iphone-feature__body
 
     &__body {
-        
         @media (min-width:$tablet){
             display: flex;
         }
@@ -210,6 +213,110 @@
     }
 }
 //====================================================================================================
+
+.map {
+    padding: 0 0 rem(30) 0;
+    @media (min-width:$tablet){
+        @include adaptiveValue("padding-top",215,30);
+        @include adaptiveValue("padding-bottom",220,30);
+    }
+    // .map__container
+    &__container {
+    }
+
+    // .map__body
+
+    &__body {
+        @media (min-width:$tablet){
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    }
+    // .map__image
+    &__image {
+        flex: 1 1 auto;
+        position: relative;
+        text-align: center;
+        @media (max-width:$tablet){
+            padding: rem(20) 0;
+        }
+        img {
+            width: 100%;
+            @media (min-width:$tablet){
+                position: absolute;
+                left: rem(75);
+                top: 50%;
+                transform: translateY(-50%);
+                width: percent(1200,900);
+            }
+            
+        }
+    }
+    // .map__content
+    &__content {
+        flex: 0 0 percent(470,1170);
+    }
+
+    // .map__title
+
+    &__title {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom",65,20);
+        }
+        @media (min-width:$tablet){
+            max-width: rem(300); 
+        }
+    }
+
+    // .map__text
+
+    &__text {
+        @include adaptiveValue("font-size",20,16);
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom",70,20);
+        }
+    }
+
+    // .map__partners
+    &__partners {
+    }
+
+    
+}
+
+.partners {
+
+    // .partners__title
+
+    &__title {
+        text-transform:  uppercase;
+        font-weight: 600;
+        color: $darkColor;
+        font-size: rem(12);
+        letter-spacing: 1.2px;
+        line-height: 1;
+        
+    }
+
+    // .partners__list
+    &__list {
+        display: inline-flex;
+        @include adaptiveValue("gap",30,15);
+        @include adaptiveValue("padding-top",30,20);
+    }
+
+    // .partners__item
+    &__item {
+    }
+
+    // .partners__link
+
+    &__link {
+        img {
+            height: rem(34);
+        }
+    }
+}
 
 //====================================================================================================
 
