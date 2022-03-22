@@ -8,6 +8,9 @@
     // .page__features
     &__features {
     }
+    // .page__iphone-feature
+    &__iphone-feature {
+    }
 }
 .main-screen {
         @include adaptiveValue("padding-top",200,70);
@@ -58,8 +61,6 @@
 		// .main-screen__button
 
 		&__button {
-            border: solid 1px rgba(38, 39, 45, 0.1);
-            background-color: transparent;
             &::before{
                 transform: rotate(180deg);
                 font-size: rem(8);
@@ -84,9 +85,6 @@
             }
 		}
 }
-.title {
-}
-
 //====================================================================================================
 
 .features {
@@ -137,9 +135,80 @@
         line-height: 1.44;
     }
 }
-
 //====================================================================================================
 
+.iphone-feature {
+    @media (min-width:$tablet){
+        @include adaptiveValue("padding-top",265,30);
+        @include adaptiveValue("padding-bottom",230,30);
+    }
+    
+    // .iphone-feature__container
+
+    &__container {
+    }
+
+    // .iphone-feature__body
+
+    &__body {
+        
+        @media (min-width:$tablet){
+            display: flex;
+        }
+    }
+
+    // .iphone-feature__image
+    &__image {
+        flex: 1 1 auto;
+        position: relative;
+        text-align: center;
+        img {
+            width: 80%;
+            @media (min-width:$tablet){
+                position: absolute;
+                right: rem(20);
+                top: 50%;
+                transform: translateY(-50%);
+                width: percent(1200,900);
+            }
+            
+        }
+    }
+
+    // .iphone-feature__content
+    &__content {
+        flex: 0 0 percent(470,1170);
+    }
+
+    // .iphone-feature__title
+
+    &__title {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom",75,20);
+        }
+    }
+
+    // .iphone-feature__text
+
+    &__text {
+        @include adaptiveValue("font-size",20,16);
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom",75,20);
+        }
+    }
+
+    // .iphone-feature__buttons
+
+    &__buttons {
+        display: inline-flex;
+        column-gap: rem(20);
+        row-gap: rem(10);
+    }
+
+    // .iphone-feature__button
+    &__button {
+    }
+}
 //====================================================================================================
 
 //====================================================================================================
