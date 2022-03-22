@@ -14,6 +14,9 @@
     // .page__map
     &__map {
     }
+    // .page__screens
+    &__screens {
+    }
 }
 .main-screen {
         @include adaptiveValue("padding-top",200,70);
@@ -319,6 +322,93 @@
 }
 
 //====================================================================================================
+
+.screens {
+    @include adaptiveValue("padding-top",140,30);
+    @include adaptiveValue("padding-bottom",120,30);
+    background-color: #f5f5f8;
+    // .screens__container
+    &__container {
+    }
+
+    // .screens__header
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include adaptiveValue("row-gap",45,20);
+        @include adaptiveValue("padding-bottom",45,20);
+    }
+
+    // .screens__title
+    &__title {
+
+    }
+
+    // .screens__hr
+
+    &__hr {
+        width: rem(50);
+        height: rem(2);
+        background-color: $blueColor;
+
+    }
+
+    // .screens__subtitle
+
+    &__subtitle {
+        text-transform: uppercase;
+        line-height: 1.83;
+        letter-spacing: 1.2px;
+        font-size: rem(12);
+
+    }
+    // .screens__inner
+	&__inner {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        &::after{
+            content:'';
+            position: absolute;
+            z-index: 10;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: url('@img/screens/mask.png') no-repeat;
+            @include adaptiveValue("width",363,250);
+            @include adaptiveValue("height",753,518);
+            width: rem(363);
+            height: rem(753);
+            background-size: 100%;
+            pointer-events: none;
+            filter: drop-shadow(1.4px 3.8px 10px 0 rgba(164, 164, 173, 0.5));
+        }
+	}
+
+    // .screens__slider
+    &__slider {
+        // margin: 0 rem(-100);
+        @include adaptiveValue("padding-top",82,50);
+        @include adaptiveValue("max-width",320,230);
+        padding-bottom: rem(100);
+        margin-bottom: rem(-30);
+        overflow: inherit !important;
+    }
+
+    // .screens__swiper
+    &__swiper {
+    }
+
+    // .screens__slide
+    &__slide {
+        box-shadow: 3.4px 9.4px 16px 0 rgba(61, 61, 62, 0.15), 15px 41.3px 66px 0 rgba(92, 95, 101, 0.28);
+        img {
+            width: 100%;
+        }
+    }
+}
 
 //====================================================================================================
 //====================================================================================================

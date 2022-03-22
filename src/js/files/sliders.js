@@ -45,8 +45,8 @@ function initSliders() {
 	bildSliders();
 
 	// Перечень слайдеров
-	if (document.querySelector('.swiper')) {
-		new Swiper('.swiper', {
+	if (document.querySelector('.screens__slider')) {
+		new Swiper('.screens__slider', {
 			// Подключаем модули слайдера
 			// для конкретного случая
 			//modules: [Navigation, Pagination],
@@ -60,12 +60,14 @@ function initSliders() {
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,
-			spaceBetween: 0,
+			spaceBetween: 30,
 			autoHeight: true,
 			speed: 800,
+			initialSlide: 2,
 			//touchRatio: 0,
 			//simulateTouch: false,
-			//loop: true,
+			// loop: true,
+			// loopAdditionalSlides: 1,
 			//preloadImages: false,
 			//lazy: true,
 			// Dotts
@@ -74,10 +76,10 @@ function initSliders() {
 			//	clickable: true,
 			//},
 			// Arrows
-			navigation: {
-				nextEl: '.about__more .more__item_next',
-				prevEl: '.about__more .more__item_prev',
-			},
+			// navigation: {
+			// 	nextEl: '.about__more .more__item_next',
+			// 	prevEl: '.about__more .more__item_prev',
+			// },
 			/*
 			breakpoints: {
 				320: {
