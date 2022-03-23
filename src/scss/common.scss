@@ -36,3 +36,42 @@
     text-transform: uppercase;
     letter-spacing: 1.2px;
 }
+
+.slider {
+    // .slider__navigation
+    &__navigation {
+        pointer-events: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        padding: 0 rem(20);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        @media (max-width:$mobileSmall){
+            padding: 0;
+            margin: 0 rem(-15);
+            width: calc(100% + 30px);
+        }
+    }
+
+    // .slider__navigation-item
+    &__navigation-item {
+        font-size: rem(42);
+        color: $grayColor;
+        pointer-events: auto;
+        // .slider__navigation-item_prev
+        &_prev {
+            // left: 0;
+        }
+
+        // .slider__navigation-item_next
+        &_next {
+            // right: 0;
+            &::before {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
