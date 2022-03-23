@@ -17,6 +17,11 @@
         color: $darkColor;
         border: solid 1px rgba(38, 39, 45, 0.1);
     }
+
+    &_l {
+        min-height: rem(60);
+        border-radius: rem(30);
+    }
 }
 
 .title {
@@ -24,4 +29,10 @@
     color: $darkColor;
     @include adaptiveValue("font-size",42,24);
     line-height: 1.24;
+}
+
+.subtitle {
+    font-size: rem(12);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
 }
