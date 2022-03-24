@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation, Controller } from 'swiper';
+import Swiper, { Navigation, Controller, Pagination } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -225,7 +225,72 @@ function initSliders() {
 		thumbSlider.controller.control = contentSlider;
 		contentSlider.controller.control = thumbSlider;
 	}
+
+	if (document.querySelector('.plan__slider')) {
+		new Swiper('.plan__slider', {
+			// Подключаем модули слайдера
+			// для конкретного случая
+			// modules: [Navigation, Pagination],
+			modules: [Pagination],
+			/*
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			*/
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: -10,
+			// autoHeight: true,
+			speed: 800,
+			// initialSlide: 0,
+			//touchRatio: 0,
+			//simulateTouch: false,
+			// loop: true,
+			// loopAdditionalSlides: 1,
+			//preloadImages: false,
+			//lazy: true,
+			// Dotts
+			pagination: {
+				el: '.slider-quality__pagging',
+				clickable: true,
+			},
+			// Arrows
+			// navigation: {
+			// 	nextEl: '.about__more .more__item_next',
+			// 	prevEl: '.about__more .more__item_prev',
+			// },
+			/*
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 0,
+					autoHeight: true,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				1268: {
+					slidesPerView: 4,
+					spaceBetween: 30,
+				},
+			},
+			*/
+			on: {
+	
+			}
+		});
+	
+	}
 }
+
 
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
 function initSlidersScroll() {
