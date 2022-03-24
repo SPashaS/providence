@@ -26,6 +26,9 @@
     // .page__plan
     &__plan {
     }
+    // .page__subcribe
+    &__subcribe {
+    }
 }
 .main-screen {
         @include adaptiveValue("padding-top",200,70);
@@ -487,36 +490,6 @@
 }
 
 
-.invite-form {
-    border: solid 1px rgba(34, 35, 40, 0.2);
-    min-height: rem(50);
-    border-radius: rem(25);
-    max-width: rem(503);
-    width: 100%;
-    padding: rem(3);
-    position: relative;
-    // .invite-form__input
-    &__input {
-        width: 50%;
-        height: rem(42);
-        border-radius: rem(21);
-        padding-left: rem(23);
-        font-size: rem(16);
-        color: #3a3d4b;
-        font-weight: 600;
-        outline: none;
-        background-color: transparent;
-    }
-
-    // .invite-form__button
-    &__button {
-        position: absolute;
-        right: 3px;
-        top: 3px;
-        background-color: $greenColor;
-        flex-direction: row-reverse;
-    }
-}
 
 
 //====================================================================================================
@@ -877,12 +850,24 @@
     @include adaptiveValue("width", 340,290);
     overflow: visible !important;
     position: relative;
-    &::after{
+    &::before{
         content:'';
         position: absolute;
+        z-index: 3;
         top: 0;
         left: 0;
         transform: translate(-100%,0);
+        height: 100%;
+        width: 100vw;
+        background-color: #f4f4f5;
+    }
+    &::after{
+        content:'';
+        position: absolute;
+        z-index: 3;
+        top: 0;
+        right: 0;
+        transform: translate(122%,0);
         height: 100%;
         width: 100vw;
         background-color: #f4f4f5;
@@ -899,7 +884,39 @@
 
 //====================================================================================================
 
+.subscribe {
+    @include adaptiveValue("padding-top",90,30);
+    @include adaptiveValue("padding-bottom",85,30);
+    // .subscribe__container
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    // .subscribe__title
+    &__title {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom",45,20);
+        }
+    }
+
+    // .subscribe__form
+    &__form {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom",30,20);
+        }
+    }
+
+    // .subscribe__text
+    &__text {
+    }
+}
+
+
 //====================================================================================================
+
+
 
 //====================================================================================================
 
