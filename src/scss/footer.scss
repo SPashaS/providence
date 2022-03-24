@@ -1,3 +1,201 @@
 //====================================================================================================
+.footer {
+    @include adaptiveValue("padding-top",85,30);
+    // .footer__container
+    &__container {
+    }
+
+    // .footer__body
+
+    &__body {
+        @media (min-width:$tablet){
+            display: flex;
+        }
+        
+    }
+
+    // .footer__main
+
+    &__main {
+        flex: 1 1 auto;
+        
+    }
+
+    // .footer__logo
+
+    &__logo {
+        @include adaptiveValue("margin-bottom",35,20);
+    }
+
+    // .footer__text
+    &__text {
+        max-width: rem(245);
+        font-size: rem(14);
+        line-height: 1.71;
+        @include adaptiveValue("margin-bottom",30,20);
+    }
+
+    // .footer__download
+    &__download {
+        display: block;
+        @media (max-width:$tablet){
+            margin-bottom:rem(30);
+        }
+    }
+
+    // .footer__nav
+
+    &__nav {
+    }
+
+    // .footer__social
+
+    &__social {
+    }
+
+    // .footer__bottom
+
+    &__bottom {
+        min-height: rem(90);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: rem(10);
+        align-items: center;
+        border-top: 1px solid rgba(38, 41, 44, 0.05);
+    }
+
+    // .footer__visit-link
+    &__visit-link {
+        line-height: 1.71;
+        font-size: rem(14);
+        font-weight: 600;
+        a {
+            color: $blueColor;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    // .footer__made
+    &__made {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        gap: rem(10);
+        color: $darkColor;
+        transition: color 0.3s ease 0s;
+        &::before{
+            font-size: rem(36);
+        }
+        span {
+            position: relative;
+            top: rem(3);
+            font-size: rem(9);
+            text-transform: uppercase;
+            font-weight: 600;
+            line-height: 2.44;
+            letter-spacing: 0.9px;
+        }
+        @media (any-hover: hover){
+            &:hover{
+                color: $greenColor;
+            }
+        }
+    }
+}
+.nav-footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem(170), 1fr));
+    @include adaptiveValue("column-gap",30,15);
+    
+    @media (min-width:$tablet){
+        grid-template-columns: repeat(3, rem(170));
+    }
+    // .nav-footer__item
+    &__item {
+
+    }
+
+    // .nav-footer__title
+    &__title {
+        font-size: rem(12);
+        font-weight: 700;
+        line-height: 1.83;
+        letter-spacing: 1.2px;
+        color: $darkColor;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-between;
+        &::after{
+            content:'\e901';
+            @extend %ic;
+            transform: rotate(-90deg);
+            transition: transform 0.3s ease 0s;
+        }
+        @media (min-width:387px){
+            margin-bottom: rem(15);
+            &::after{
+                display: none;
+            }
+        }
+        &._spoller-active {
+            &::after {
+                transform: rotate(90deg);
+            }
+        }
+        
+    }
+
+    // .nav-footer__list
+
+    &__list {
+        a {
+            font-size: rem(16);
+            line-height: 2.25;
+        }
+        @media (max-width:387px) {
+            margin-bottom: rem(20);
+        }
+    }
+}
+.social {
+    @include adaptiveValue("margin-top",40,20);
+    @include adaptiveValue("margin-bottom",170,30);
+    // .social__list
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: rem(15);
+        flex-wrap: wrap;
+    }
+
+    // .social__item
+    &__item {
+        &:nth-child(2n):hover  {
+            a {
+                color: $blueColor;
+            }
+        }
+    }
+
+    // .social__link
+    &__link {
+        padding: rem(5);
+        display: inline-block;
+        font-size: rem(18);
+        transition: color 0.3s ease 0s;
+        @media (any-hover: hover){
+            &:hover {
+                color: $greenColor;
+            }
+            
+        }
+    }
+}
+
+
+
 
 //====================================================================================================
