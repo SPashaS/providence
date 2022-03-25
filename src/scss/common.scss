@@ -9,6 +9,7 @@
     align-items: center;
     gap: rem(14);
     font-size: rem(16);
+    white-space: nowrap;
     @media (max-width:$mobileSmall){
         justify-content: center; 
     }
@@ -21,6 +22,10 @@
     &_l {
         min-height: rem(60);
         border-radius: rem(30);
+    }
+
+    &_rewers {
+        flex-direction: row-reverse;
     }
 }
 
@@ -49,8 +54,8 @@
         justify-content: space-between;
         @media (max-width:$mobileSmall){
             padding: 0;
-            margin: 0 rem(-15);
-            width: calc(100% + 30px);
+            margin: 0 rem(-10);
+            width: calc(100% + 20px);
         }
 
     // .slider__navigation-item
@@ -104,8 +109,8 @@
     }
 }
 .hr {
-    // .hr__container
-    &__container {
+    // .hr__body
+    &__body {
         border-bottom: 1px solid rgba(38, 41, 44, 0.05);
     }
 }

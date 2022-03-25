@@ -128,10 +128,10 @@
         text-transform: uppercase;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         &::after{
-            content:'\e901';
+            content:'\e90c';
             @extend %ic;
-            transform: rotate(-90deg);
             transition: transform 0.3s ease 0s;
         }
         @media (min-width:387px){
@@ -142,7 +142,7 @@
         }
         &._spoller-active {
             &::after {
-                transform: rotate(90deg);
+                transform: rotate(180deg);
             }
         }
         
@@ -173,11 +173,6 @@
 
     // .social__item
     &__item {
-        &:nth-child(2n):hover  {
-            a {
-                color: $blueColor;
-            }
-        }
     }
 
     // .social__link
@@ -188,7 +183,7 @@
         transition: color 0.3s ease 0s;
         @media (any-hover: hover){
             &:hover {
-                color: $greenColor;
+                color: $blueColor
             }
             
         }
