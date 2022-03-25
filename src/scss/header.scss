@@ -10,20 +10,7 @@
 	@media (max-width:$tablet){
 		top: rem(20);
 	}
-	& a {
-		font-size: rem(22);
-		color: #26272d;
-		
-		@media (min-width:$tablet){
-			font-size: rem(16);
-			transition: color 0.3s ease 0s;
-			@media (any-hover: hover){
-				&:hover{
-					color: rgba(27, 28, 30, 0.4)
-				}
-			}  
-		}
-	}
+
 
 	// .header__container
 	&__container {
@@ -118,8 +105,18 @@
 	// .menu__link
 
 	&__link {
-
-
+		font-size: rem(22);
+		color: #26272d;
+		
+		@media (min-width:$tablet){
+			font-size: rem(16);
+			transition: color 0.3s ease 0s;
+			@media (any-hover: hover){
+				&:hover{
+					color: rgba(27, 28, 30, 0.4)
+				}
+			}  
+		}
 	}
 }
 
