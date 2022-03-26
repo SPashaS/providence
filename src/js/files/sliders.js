@@ -64,6 +64,7 @@ function initSliders() {
 			autoHeight: true,
 			speed: 800,
 			initialSlide: 2,
+			grabCursor: true,
 			//touchRatio: 0,
 			//simulateTouch: false,
 			// loop: true,
@@ -129,6 +130,7 @@ function initSliders() {
 			// autoHeight: true,
 			speed: 800,
 			initialSlide: 1,
+			grabCursor: true,
 			//touchRatio: 0,
 			//simulateTouch: false,
 			// loop: true,
@@ -179,6 +181,7 @@ function initSliders() {
 			slidesPerView: 1,
 			spaceBetween: 30,
 			initialSlide: 1,
+			grabCursor: true,
 			// autoHeight: true,
 			speed: 800,
 			// initialSlide: 2,
@@ -243,6 +246,7 @@ function initSliders() {
 			observeParents: true,
 			slidesPerView: 1,
 			spaceBetween: -10,
+			grabCursor: true,
 			// autoHeight: true,
 			speed: 800,
 			// initialSlide: 0,
@@ -254,7 +258,7 @@ function initSliders() {
 			//lazy: true,
 			// Dotts
 			pagination: {
-				el: '.slider-quality__pagging',
+				el: '.slider-plan__pagging',
 				clickable: true,
 			},
 			// Arrows

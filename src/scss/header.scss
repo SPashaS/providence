@@ -74,7 +74,8 @@
 			width: 100%;
 			height: 100%;
 			background-color: $grayColor;
-			padding: rem(50) rem(20) rem(20);
+			overflow: auto;
+			padding: rem(60) rem(20) rem(20) rem(50);
 			transition: left 0.3s ease 0s;
 			.menu-open & {
 				left: 0;
@@ -93,7 +94,6 @@
 		column-gap: rem(40);
 		@media (max-width:$tablet){
 			flex-direction: column;
-			align-items: center;
 		}
 	}
 
@@ -137,16 +137,14 @@
 
 	&__list {
 		display: flex;
-		align-items: center;
-		flex-wrap: wrap;
 		column-gap: rem(30);
-		
 		@media (max-width:$tablet){
 			flex-direction: column;
-			align-items: center;
 		}
 		@media (min-width:$tablet){
 			row-gap: rem(5);
+			align-items: center;
+			flex-wrap: wrap;
 		}
 	}
 

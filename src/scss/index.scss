@@ -1,6 +1,5 @@
 //====================================================================================================
-.wrapper {
-}
+
 .page {
 	// .page__main-screen
 	&__main-screen {
@@ -31,30 +30,25 @@
     }
 }
 .main-screen {
-        @include adaptiveValue("padding-top",200,70);
         position: relative;
         background: url('../img/main-screen/bg.jpg');
         background-size: cover;
         background-position: center;
-        // &::before {
-        //     content:'';
-        //     position: absolute;
-        //     z-index: -1;
-        //     top: 0;
-        //     left: 50%;
-        //     transform: translate(-50%);
-        //     width: rem(1600);
-        //     height: 100%;
-            
-        // }
+        overflow: hidden;
 		// .main-screen__container
 		&__container {
+            
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
 		}
         // .main-screen__content
         &__content {
+            @include adaptiveValue("padding-top",200,70);
             display: flex;
             flex-direction: column;
             align-items: center;
+            flex: 1 1 auto;
         }
 		// .main-screen__title
 		&__title {
@@ -98,7 +92,7 @@
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                // box-shadow: 3.4px 9.4px 16px 0 rgba(61, 61, 62, 0.14), 15px 41.3px 66px 0 rgba(92, 95, 101, 0.15);
+                filter: drop-shadow(rem(10) 0 rem(16) rgba(0, 0, 0, 0.3));
             }
 		}
 }
@@ -658,8 +652,6 @@
 
 .plan {
     background-color: #f4f4f5;
-    @include adaptiveValue("padding-top",160,30);
-    @include adaptiveValue("padding-bottom",190,30);
     // .plan__container
 
     &__container {
@@ -670,6 +662,7 @@
         @media (min-width:$mobile){
             display: flex;
             justify-content: space-between;
+            align-items: center;
             gap: rem(15);
         }
         
@@ -677,8 +670,9 @@
 
     // .plan__content
     &__content {
+        @include adaptiveValue("padding-top",200,30);
+        @include adaptiveValue("padding-bottom",190,30);
         flex: 0 1 percent(370,1170);
-        @include adaptiveValue("padding-top",45,0);
         position: relative;
         z-index: 15;
         display: flex;
@@ -721,6 +715,11 @@
         }
         a {
             color: $blueColor;
+            @media (any-hover: hover){
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
         }
     }
 
@@ -873,17 +872,6 @@
         width: 100vw;
         background-color: #f4f4f5;
     }
-    &::after{
-        content:'';
-        position: absolute;
-        z-index: 3;
-        top: 0;
-        right: 0;
-        transform: translate(122%,0);
-        height: 100%;
-        width: 100vw;
-        background-color: #f4f4f5;
-    }
     // .slider-plan__swiper
     &__swiper {
         align-items: center;
@@ -891,6 +879,46 @@
 
     // .slider-plan__slide
     &__slide {
+        margin-right: rem(10) !important;
+        &.swiper-slide-active {
+            margin-right: rem(-10) !important;
+        }
+    }
+
+    // .slider-plan__pagging
+	&__pagging {
+        padding: rem(20) 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: rem(10);
+	}
+
+    .swiper-pagination-bullet {
+        width: rem(20);
+        height: rem(20);
+        border-radius: 50%;
+        background-color: rgb(231, 231, 231);
+        position: relative;
+        cursor: pointer;
+        &::after{
+            content:'';
+            width: rem(0);
+            height: rem(0);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: $blueColor;
+            transition: all 0.3s ease 0s;
+        }
+        &.swiper-pagination-bullet-active {
+            &::after{
+                width: rem(13);
+                height: rem(13);
+            }
+        }
     }
 }
 
