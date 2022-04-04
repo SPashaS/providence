@@ -1101,21 +1101,14 @@ h6 {
   }
 }
 .iphone-feature__content {
-  flex: 0 0 40.1709401709%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
-@media (min-width: 75em) {
-  .iphone-feature__title:not(:last-child) {
-    margin-bottom: 4.6875rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 75em) {
-  .iphone-feature__title:not(:last-child) {
-    margin-bottom: clamp( 1.25rem , 0rem  +  6.25vw , 4.6875rem );
-  }
-}
-@media (max-width: 20em) {
-  .iphone-feature__title:not(:last-child) {
-    margin-bottom: 1.25rem;
+@media (min-width: 61.99875em) {
+  .iphone-feature__content {
+    flex: 0 0 40.1709401709%;
+    gap: 4.6875rem;
   }
 }
 @media (min-width: 75em) {
@@ -1131,21 +1124,6 @@ h6 {
 @media (max-width: 20em) {
   .iphone-feature__text {
     font-size: 1rem;
-  }
-}
-@media (min-width: 75em) {
-  .iphone-feature__text:not(:last-child) {
-    margin-bottom: 4.6875rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 75em) {
-  .iphone-feature__text:not(:last-child) {
-    margin-bottom: clamp( 1.25rem , 0rem  +  6.25vw , 4.6875rem );
-  }
-}
-@media (max-width: 20em) {
-  .iphone-feature__text:not(:last-child) {
-    margin-bottom: 1.25rem;
   }
 }
 .iphone-feature__buttons {
@@ -1629,6 +1607,9 @@ h6 {
   .customers {
     padding-bottom: 1.875rem;
   }
+}
+.customers__title {
+  font-size: 0;
 }
 .customers__slider {
   position: relative;
